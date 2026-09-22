@@ -250,7 +250,7 @@ jobs:
       - name: Build URL & Download
         run: |
           # Retrieve the scraped version from the previous step
-          $scrapedVersion = "8.0.0"
+          $scrapedVersion = "${{ needs.scrape_fe_version.outputs.scraped_version }}"
           
           # Check if the scraped version is available
           if (-not [string]::IsNullOrEmpty($scrapedVersion)) {
